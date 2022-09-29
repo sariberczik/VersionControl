@@ -34,6 +34,8 @@ namespace UserMaintenance
 
             button2.Text = Resource1.Writing_to_a_file;
 
+            button3.Text = Resource1.Delete;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +73,16 @@ namespace UserMaintenance
                 sw.Close();
             }
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            Guid delete = ((User)listBox1.SelectedItem).ID;
+            var d = (from u in users
+                     where u.ID == delete
+                     select u).FirstOrDefault();
+            users.Remove(d);
         }
     }
 }
