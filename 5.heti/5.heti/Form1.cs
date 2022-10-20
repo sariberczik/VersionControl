@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using System.Xml;
 
 namespace _5.heti
@@ -24,6 +25,7 @@ namespace _5.heti
             InitializeComponent();
 
             harmadik();
+            hatodik();
 
         }
 
@@ -67,11 +69,19 @@ namespace _5.heti
                 }
                 
 
-
-
-
-
             }
+
+        }
+
+        private void hatodik()
+        {
+            chartRateData.DataSource = rateDatas;
+
+            var series = chartRateData.Series[0];
+            series.ChartType = SeriesChartType.Line;
+            series.XValueMember = "Date";
+            series.YValueMembers = "Value";
+
 
         }
 
