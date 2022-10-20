@@ -26,7 +26,15 @@ namespace _5.heti
 
             harmadik();
             hatodik();
+            Refresh();
+        }
 
+        private void RefreshData()
+        {
+            rateDatas.Clear();
+
+            harmadik();
+            hatodik();
         }
 
         private void harmadik()
@@ -36,9 +44,9 @@ namespace _5.heti
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = "EUR",
-                startDate = "2020-01-01",
-                endDate = "2020-06-30"
+                currencyNames = comboBox1.SelectedItem.ToString(),
+                startDate = dateTimePicker1.Value.ToString(),
+                endDate = dateTimePicker2.Value.ToString()
 
             };
 
@@ -93,6 +101,19 @@ namespace _5.heti
 
         }
 
-        
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            Refresh();
+        }
     }
 }
