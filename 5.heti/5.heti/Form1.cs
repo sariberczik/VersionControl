@@ -38,7 +38,7 @@ namespace _5.heti
 
             var reponse = mnbService.GetExchangeRates(request);
 
-            var result = reponse.GetExchangeRatesResult();
+            var result = reponse.GetExchangeRatesResult;
 
 
 
