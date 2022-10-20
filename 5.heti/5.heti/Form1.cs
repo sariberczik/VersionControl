@@ -46,8 +46,18 @@ namespace _5.heti
 
 
 
-            //var xml = new XmlDocument();
-            //xml.LoadXml();
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
+
+            foreach (XmlElement element in xml.DocumentElement)
+            {
+                var rate = new RateData();
+                rateDatas.Add(rate);
+
+                rate.Date = DateTime.Parse(element.GetAttribute("date"));
+
+                rate.Currency=
+            }
 
         }
 
