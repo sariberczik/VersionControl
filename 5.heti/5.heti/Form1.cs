@@ -81,7 +81,15 @@ namespace _5.heti
             series.ChartType = SeriesChartType.Line;
             series.XValueMember = "Date";
             series.YValueMembers = "Value";
+            series.BorderWidth = 2; //2 vastagsagu
 
+            var legend=chartRateData.Legends[0];
+            legend.Enabled = false;  //Ne látszódjon oldalt a címke (legend)
+
+            var chartArea = chartRateData.ChartAreas[0];
+            chartArea.AxisX.MajorGrid.Enabled = false; //Ne látszódjanak a fő grid vonalak se az X, se az Y tengelyen
+            chartArea.AxisY.MajorGrid.Enabled = false; 
+            chartArea.AxisY.IsStartedFromZero = false; //0tol induljon
 
         }
 
