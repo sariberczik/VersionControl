@@ -56,7 +56,13 @@ namespace _5.heti
 
                 rate.Date = DateTime.Parse(element.GetAttribute("date"));
 
-                rate.Currency=
+                var childElement = (XmlElement)element.ChildNodes[0];
+                rate.Currency = childElement.GetAttribute("curr");
+
+                
+
+
+
             }
 
         }
