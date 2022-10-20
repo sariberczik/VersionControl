@@ -13,13 +13,15 @@ namespace _5.heti
 {
     public partial class Form1 : Form
     {
+        BindingList<RateData> rateDatas = new BindingList<RateData>();
+
+
+
         public Form1()
         {
             InitializeComponent();
 
             harmadik();
-
-
 
         }
 
