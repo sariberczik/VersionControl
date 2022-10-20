@@ -1,4 +1,5 @@
-﻿using _5.heti.MnbServiceReference;
+﻿using _5.heti.Entities;
+using _5.heti.MnbServiceReference;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,13 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace _5.heti
 {
     public partial class Form1 : Form
     {
         BindingList<RateData> rateDatas = new BindingList<RateData>();
-
+        
 
 
         public Form1()
@@ -43,6 +45,9 @@ namespace _5.heti
             var result = reponse.GetExchangeRatesResult;
 
 
+
+            //var xml = new XmlDocument();
+            //xml.LoadXml();
 
         }
 
