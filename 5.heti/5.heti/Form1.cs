@@ -17,7 +17,8 @@ namespace _5.heti
     public partial class Form1 : Form
     {
         BindingList<RateData> rateDatas = new BindingList<RateData>();
-        
+        BindingList<string> Currency = new BindingList<string>();
+
 
 
         public Form1()
@@ -27,6 +28,33 @@ namespace _5.heti
             harmadik();
             hatodik();
             Refresh();
+
+            comboBox1.DataSource = Currency;
+            dataGridView1.DataSource = rateDatas;
+
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            var request = new GetCurrenciesRequestBody();
+
+            var response = mnbService.GetCurrencies(request);
+            var result = response.GetCurrenciesResult;
+
+            var xml = new XmlDocument();
+
+            xml.LoadXml(result);
+
+            foreach (XmlElement item in xml.DocumentElement.ChildNodes[0])
+            {
+                string c;
+
+                var childElement = (XmlElement)item;
+                if (childElement == null)
+                    continue;
+
+                c = childElement.InnerText;
+                Currency.Add(c);
+            }
+
+            RefreshData();
         }
 
         private void RefreshData()
