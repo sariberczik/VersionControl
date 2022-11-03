@@ -36,7 +36,6 @@ namespace _6.heti
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
@@ -44,12 +43,9 @@ namespace _6.heti
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.button2);
-            this.mainPanel.Controls.Add(this.button1);
-            this.mainPanel.Location = new System.Drawing.Point(1, 0);
+            this.mainPanel.Location = new System.Drawing.Point(1, 122);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(799, 449);
+            this.mainPanel.Size = new System.Drawing.Size(799, 327);
             this.mainPanel.TabIndex = 0;
             // 
             // createTimer
@@ -66,7 +62,7 @@ namespace _6.heti
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Location = new System.Drawing.Point(1, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -76,7 +72,7 @@ namespace _6.heti
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(0, 29);
+            this.button2.Location = new System.Drawing.Point(91, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -87,7 +83,7 @@ namespace _6.heti
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 65);
+            this.label1.Location = new System.Drawing.Point(8, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 2;
@@ -98,12 +94,14 @@ namespace _6.heti
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

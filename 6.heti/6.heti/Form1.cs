@@ -90,7 +90,7 @@ namespace _6.heti
             _nextToy.Top = label1.Top + label1.Height + 20;
             _nextToy.Left = label1.Left;
 
-            mainPanel.Controls.Add(_nextToy);
+            Controls.Add(_nextToy);
         }
 
     }
