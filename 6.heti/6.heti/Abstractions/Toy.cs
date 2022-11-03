@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace _6.heti.Abstractions
 {
-    class Toy: Label
+    public abstract class Toy: Label //ide is kellett a public abstract
     {
 
         public Toy()
@@ -27,13 +27,11 @@ namespace _6.heti.Abstractions
 
         }
 
-        protected void DrawImage(Graphics graphics) //új függvényt DrawImage néven és Graphics típusú bemeneti paraméterrel, villanykorte
+        protected abstract void DrawImage(Graphics graphics); //új függvényt DrawImage néven és Graphics típusú bemeneti paraméterrel, villanykorte
         //protected: ha nem a fv-re van szükségem, csak arr h hasznalhassam
-        {
-            graphics.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height); //kitöltött kék kör
-        }
+        
 
-        public void MoveBall() //publikus fv
+        public virtual void MoveToy() //publikus fv
         {
             Left++; //1gyel növelem
         }
