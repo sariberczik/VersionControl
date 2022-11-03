@@ -32,5 +32,15 @@ namespace _6.heti
             Factory = new BallFactory(); //A konstruktorban töltsd fel a Factory változót egy BallFactory példánnyal.
 
         }
+
+        private void createTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void conveyorTimer_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }
