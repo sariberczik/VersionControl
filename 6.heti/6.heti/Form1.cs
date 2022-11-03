@@ -78,6 +78,12 @@ namespace _6.heti
         private void button2_Click(object sender, EventArgs e)
         {
             Factory = new BallFactory();
+
+            Factory = new BallFactory
+            {
+                BallColor = button2.BackColor
+            };
+
         }
 
         private void DisplayNext()
@@ -105,7 +111,9 @@ namespace _6.heti
                 return; //megnyitas, ha nem okkal zarul, kilépés
             button.BackColor = colorPicker.Color;
 
-
         }
+
+
+
     }
 }

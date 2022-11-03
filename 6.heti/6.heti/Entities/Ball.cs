@@ -18,8 +18,15 @@ namespace _6.heti.Entities
 
         //override: h implementáljam az absztraktot, labelt atirtam toyra
         {
-            graphics.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height); //kitöltött kék kör
+            graphics.FillEllipse(BallColor, 0, 0, Width, Height); //kitöltött kék kör
         }
+
+        public Ball(Color color) //ball osztalynak egy Color típusú bemenő paramétere
+        {
+
+        }
+
+        public SolidBrush BallColor { get; private set; } //A private előtag a BallColor set előtt lehetővé teszi, hogy az osztályon belül korlátlanul módosítsuk a property értékét, de az osztályon kívül, csak lekérdezni lehessen azt.
 
         
     }
