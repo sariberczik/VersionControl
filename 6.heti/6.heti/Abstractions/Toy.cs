@@ -24,7 +24,6 @@ namespace _6.heti.Abstractions
         private void Toy_Paint(object sender, PaintEventArgs e)
         {
             DrawImage(e.Graphics);
-
         }
 
         protected abstract void DrawImage(Graphics graphics); //új függvényt DrawImage néven és Graphics típusú bemeneti paraméterrel, villanykorte
