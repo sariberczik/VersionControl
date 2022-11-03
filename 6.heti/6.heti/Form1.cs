@@ -93,5 +93,19 @@ namespace _6.heti
             Controls.Add(_nextToy);
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var button = (Button)sender; //változót button néven, amiben a sender-t Button-á cast-olva tárolod
+
+            var colorPicker = new ColorDialog(); //példányosíts egy ColorDialog-ot
+
+            colorPicker.Color = button3.BackColor;
+
+            if (colorPicker.ShowDialog() != DialogResult.OK)
+                return; //megnyitas, ha nem okkal zarul, kilépés
+            button.BackColor = colorPicker.Color;
+
+
+        }
     }
 }
