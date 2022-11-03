@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace _6.heti.Entities
 {
-    public class BallFactory : IToyFactory
+    class CarFactory : IToyFactory
     {
         public Toy CreateNew()
         {
-            return new Ball(); // a fv maga annyi h letrehoz egy uj labdat, ha meghívom a fv-t, return: mindig ujra csinal egyet
+            return new Car(); // a fv maga annyi h letrehoz egy uj kocsit, ha meghívom a fv-t, return: mindig ujra csinal egyet
         }
     }
 }
