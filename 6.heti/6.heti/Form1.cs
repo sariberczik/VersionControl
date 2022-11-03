@@ -17,12 +17,16 @@ namespace _6.heti
         List<Toy> _toys = new List<Toy>();
 
 
+        private Toy _nextToy; //osztályszintű Toy típusú változót _nextToy néven
+
         private IToyFactory _factory;
 
         public IToyFactory Factory
         {
             get { return _factory; }
-            set { _factory = value; }
+            set { _factory = value;
+                DisplayNext();//Így a Factory megváltozása esetén mindig megváltozik majd a megjelenített kép is.
+            }
         }
 
 
@@ -65,5 +69,29 @@ namespace _6.heti
                 _toys.Remove(oldestBall);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Factory = new CarFactory();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory();
+        }
+
+        private void DisplayNext()
+        {
+            if (_nextToy != null)
+                Controls.Remove(_nextToy); //ha nem ures, eltavolitas
+
+            _nextToy = Factory.CreateNew();
+
+            _nextToy.Top = label1.Top + label1.Height + 20;
+            _nextToy.Left = label1.Left;
+
+            mainPanel.Controls.Add(_nextToy);
+        }
+
     }
 }
