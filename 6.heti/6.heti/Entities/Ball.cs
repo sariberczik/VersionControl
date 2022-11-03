@@ -23,7 +23,7 @@ namespace _6.heti.Entities
 
         public Ball(Color color) //ball osztalynak egy Color típusú bemenő paramétere
         {
-
+            BallColor = new SolidBrush(color);
         }
 
         public SolidBrush BallColor { get; private set; } //A private előtag a BallColor set előtt lehetővé teszi, hogy az osztályon belül korlátlanul módosítsuk a property értékét, de az osztályon kívül, csak lekérdezni lehessen azt.
