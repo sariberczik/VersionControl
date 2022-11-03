@@ -112,7 +112,13 @@ namespace _6.heti
 
         }
 
-
-
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Factory = new PresentFactory
+            {
+                ribboncolor = button5.BackColor,
+                boxcolor=button6.BackColor
+            };
+        }
     }
 }
