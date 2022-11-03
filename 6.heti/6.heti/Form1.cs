@@ -1,4 +1,5 @@
-﻿using _6.heti.Entities;
+﻿using _6.heti.Abstractions;
+using _6.heti.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,12 @@ namespace _6.heti
 {
     public partial class Form1 : Form
     {
-        List<Ball> _balls = new List<Ball>();
+        List<Toy> _toys = new List<Toy>();
 
 
-        private BallFactory _factory;
+        private IToyFactory _factory;
 
-        public BallFactory Factory
+        public IToyFactory Factory
         {
             get { return _factory; }
             set { _factory = value; }
@@ -30,14 +31,14 @@ namespace _6.heti
             InitializeComponent();
 
             Factory = new BallFactory(); //A konstruktorban töltsd fel a Factory változót egy BallFactory példánnyal.
-
+            //ezt at lehet irni CarFactory-re es akk kocsik jelennek meg
         }
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
             var ball = Factory.CreateNew(); //Factory CreateNew metódusát felhasználva hozz létre egy Ball példányt
 
-            _balls.Add(ball); //listazhoz hozzaadas
+            _toys.Add(ball); //listazhoz hozzaadas
 
             ball.Left = -ball.Width; //A Left tulajdonságát pedig állítsd a szélessége negatív értékére.
 
@@ -49,7 +50,7 @@ namespace _6.heti
         {
             var maxPosition = 0;
 
-            foreach (var ball in _balls)
+            foreach (var ball in _toys)
             {
                 ball.MoveToy(); //mindegyik elem moveball metodusa
 
@@ -59,9 +60,9 @@ namespace _6.heti
 
             if (maxPosition > 1000)
             {
-                var oldestBall = _balls[0];
+                var oldestBall = _toys[0];
                 mainPanel.Controls.Remove(oldestBall);
-                _balls.Remove(oldestBall);
+                _toys.Remove(oldestBall);
             }
         }
     }
