@@ -21,7 +21,7 @@ namespace _6.heti
         public BallFactory Factory
         {
             get { return _factory; }
-            set { BallFactory _factory = value; }
+            set { _factory = value; }
         }
 
 
@@ -47,7 +47,22 @@ namespace _6.heti
 
         private void conveyorTimer_Tick(object sender, EventArgs e)
         {
+            var maxPosition = 0;
 
+            foreach (var ball in _balls)
+            {
+                ball.MoveBall(); //mindegyik elem moveball metodusa
+
+                if (ball.Left > maxPosition)
+                    maxPosition = ball.Left;
+            }
+
+            if (maxPosition > 1000)
+            {
+                var oldestBall = _balls[0];
+                mainPanel.Controls.Remove(oldestBall);
+                _balls.Remove(oldestBall);
+            }
         }
     }
 }
