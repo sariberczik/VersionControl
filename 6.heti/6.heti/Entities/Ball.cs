@@ -22,12 +22,13 @@ namespace _6.heti.Entities
 
         private void Ball_Paint(object sender, PaintEventArgs e)
         {
-            
+            DrawImage(e.Graphics);
+
         }
 
         void DrawImage(Graphics graphics) //új függvényt DrawImage néven és Graphics típusú bemeneti paraméterrel, villanykorte
         {
-
+            graphics.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height); //kitöltött kék kör
         }
         
     }
