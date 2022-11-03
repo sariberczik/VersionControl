@@ -35,7 +35,6 @@ namespace _6.heti.Entities
         public void MoveBall() //publikus fv
         {
             Left++; //1gyel növelem
-
         }
 
 
