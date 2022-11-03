@@ -51,7 +51,7 @@ namespace _6.heti
 
             foreach (var ball in _balls)
             {
-                ball.MoveBall(); //mindegyik elem moveball metodusa
+                ball.MoveToy(); //mindegyik elem moveball metodusa
 
                 if (ball.Left > maxPosition)
                     maxPosition = ball.Left;
