@@ -22,7 +22,5 @@ namespace _6.heti.Entities
         }
 
         
-
-
     }
 }
