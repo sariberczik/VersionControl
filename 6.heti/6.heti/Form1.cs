@@ -35,6 +35,13 @@ namespace _6.heti
 
         private void createTimer_Tick(object sender, EventArgs e)
         {
+            var ball = Factory.CreateNew(); //Factory CreateNew metódusát felhasználva hozz létre egy Ball példányt
+
+            _balls.Add(ball); //listazhoz hozzaadas
+
+            ball.Left = -ball.Width; //A Left tulajdonságát pedig állítsd a szélessége negatív értékére.
+
+            mainPanel.Controls.Add(ball); //panelhez adás (panelnél kell a controls, listanal nem)
 
         }
 
