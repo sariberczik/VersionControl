@@ -23,7 +23,10 @@ namespace _7.heti
         {
             InitializeComponent();
 
-            
+            //dataGridView1.DataSource = context.Ticks.ToList();
+
+            Ticks = context.Ticks.ToList();
+            dataGridView1.DataSource = Ticks;
         }
     }
 }
