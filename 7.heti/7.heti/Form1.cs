@@ -18,6 +18,9 @@ namespace _7.heti
         //List<Tick> ticks=new List<Tick>();
         List<Tick> Ticks;
 
+        List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+
+
 
         public Form1()
         {
