@@ -12,9 +12,18 @@ namespace _7.heti
 {
     public partial class Form1 : Form
     {
+
+        PortfolioEntities context = new PortfolioEntities();
+
+        //List<Tick> ticks=new List<Tick>();
+        List<Tick> Ticks;
+
+
         public Form1()
         {
             InitializeComponent();
+
+            
         }
     }
 }
