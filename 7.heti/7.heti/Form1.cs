@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _7.heti.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,8 @@ namespace _7.heti
         List<Tick> Ticks;
 
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+        
+        
 
 
 
@@ -32,6 +35,10 @@ namespace _7.heti
             dataGridView1.DataSource = Ticks;
 
             CreatePortfolio();
+
+            
+
+
         }
 
         private void CreatePortfolio()
