@@ -21,6 +21,8 @@ namespace _7.heti
         List<Tick> Ticks;
 
         List<PortfolioItem> Portfolio = new List<PortfolioItem>();
+
+        List<decimal> nyereségekRendezve; //utso
         
         
 
@@ -51,7 +53,8 @@ namespace _7.heti
                 Console.WriteLine(i + " " + ny);
             }
 
-            var nyereségekRendezve = (from x in Nyereségek
+            //var-t előle csak a vegen kell kiszedni
+            nyereségekRendezve = (from x in Nyereségek
                                       orderby x
                                       select x)
                                         .ToList();
@@ -97,12 +100,26 @@ namespace _7.heti
             sfd.DefaultExt = "csv";
             sfd.AddExtension = true;
 
-            if (sfd.ShowDialog()==DialogResult.OK)
+            if (sfd.ShowDialog() == DialogResult.OK) return;
+            using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.Default))
             {
-                StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8);
+                int i = 0;
 
+                sw.Write("Időszak;Nyereség");
+
+                foreach (var n in nyereségekRendezve)
+                {
+                    i++;
+                    sw.Write(i);
+                    sw.Write(";");
+                    sw.Write(n);
+                    sw.WriteLine();
+                }
                 sw.Close();
             }
+                
+
+            
         }
     }
 }
