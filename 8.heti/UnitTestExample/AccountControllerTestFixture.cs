@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,14 @@ namespace UnitTestExample
 {
     public class AccountControllerTestFixture
     {
-        [Test]
+        [
+             Test,
+             TestCase("abcd1234", false),
+             TestCase("irf@uni-corvinus", false),
+             TestCase("irf.uni-corvinus.hu", false),
+             TestCase("irf@uni-corvinus.hu", true)
+        ]
+
         public void TestValidateEmail(string email, bool expectedResult)
         {
             // Arrange
