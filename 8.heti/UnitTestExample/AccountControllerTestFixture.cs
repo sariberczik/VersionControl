@@ -32,10 +32,10 @@ namespace UnitTestExample
 
         [
             Test,
-            TestCase("abcdABCD", false),
-             TestCase("ABCD1234", false),
-            TestCase("abcd1234", false),
-             TestCase("Ab1234", false),
+            TestCase("abcdABCD", true),
+             TestCase("ABCD1234", true),
+            TestCase("abcd1234", true),
+             TestCase("Ab1234", true),
             TestCase("Abcd1234", true),
                         
             ]
@@ -52,7 +52,26 @@ namespace UnitTestExample
             Assert.AreEqual(expectedResult, actualResult);
         }
 
-        
+        [
+            Test,
+            TestCase("irf@uni-corvinus.hu", "Abcd1234"),
+            TestCase("irf@uni-corvinus.hu", "Abcd1234567"),
+        ]
+        public void TestRegisterHappyPath(string email, string password)
+        {
+            // Arrange
+            var accountController = new AccountController();
+
+            // Act
+            var actualResult = accountController.Register(email, password);
+
+            // Assert
+            Assert.AreEqual(email, actualResult.Email);
+            Assert.AreEqual(password, actualResult.Password);
+            Assert.AreNotEqual(Guid.Empty, actualResult.ID);
+        }
+
+
 
     }
 }
