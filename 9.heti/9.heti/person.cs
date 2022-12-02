@@ -8,5 +8,14 @@ namespace _9.heti
 {
     public class  person
     {
+        public int BirthYear { get; set; }
+        public Gender Gender { get; set; }
+        public int NbrOfChildren { get; set; }
+        public bool IsAlive { get; set; }
+
+        public person()
+        {
+            IsAlive = true;
+        }
     }
 }
