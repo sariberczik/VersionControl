@@ -80,6 +80,30 @@ namespace _9.heti
             return population;
         }
 
+        public List<BirthProbability> GetBirthProbability(string csvpath)
+        {
+            List<BirthProbability> birthprobaility = new List<BirthProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    BirthProbability b = new BirthProbability();
+                    b.Age = int.Parse(line[0]);
+                    b.NbrOfChildren = int.Parse(line[1]);
+                    b.P = double.Parse(line[2]);
+                    birthprobaility.Add(b);
+                }
+            }
+
+            return birthprobaility;
+        }
+
+
+
+
+
 
     }
 }
