@@ -99,6 +99,25 @@ namespace _9.heti
 
             return birthprobaility;
         }
+        public List<DeathProbability> GetDeathProbability(string csvpath)
+        {
+            List<DeathProbability> deathprobability = new List<DeathProbability>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    DeathProbability d = new DeathProbability();
+                    d.Gender = (Gender)int.Parse(line[0]);
+                    d.Age = int.Parse(line[1]);
+                    d.P = double.Parse(line[2]);
+                    deathprobability.Add(d);
+                }
+            }
+
+            return deathprobability;
+        }
 
 
 
