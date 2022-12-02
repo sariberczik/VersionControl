@@ -170,6 +170,26 @@ namespace _9.heti
             textBox1.Text = ofd.FileName;
         }
 
+        void DisplayResult(List<int> males, List<int> females)
+        {
+            string text = "";
+
+            for (int i = 2005; i <= numericUpDown1.Value; i++)
+            {
+                int NbrOfMales = (from x in males
+                                  where x == i
+                                  select x).Count();
+
+                int NbrOfFemales = (from x in females
+                                    where x == i
+                                    select x).Count();
+
+                text = text + "Szimulációs év: " + i + "\n\tFiúk: " + NbrOfMales + "\n\tLányok:" + NbrOfFemales + "\n\n";
+            }
+
+            richTextBox1.Text = text;
+        }
+
 
 
 
