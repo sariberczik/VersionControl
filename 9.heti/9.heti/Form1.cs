@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _9.heti.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +26,37 @@ namespace _9.heti
         {
             InitializeComponent();
 
-            
+        }
 
+        void Simulation()
+        {
+            for (int i = 2005; i <= numericUpDown1.Value; i++)
+            {
+                for (int j = 0; j < Population.Count; j++)
+                {
+                    SimStep(i, Population[j]);
+
+                    if (Population[j].Gender == Gender.Male)
+                    {
+                        Males.Add(i);
+                    }
+                    else
+                    {
+                        Females.Add(i);
+                    }
+
+                }
+
+                int NbrOfMales = (from x in Population
+                                  where x.Gender == Gender.Male && x.IsAlive == true
+                                  select x).Count();
+
+                int NbrOfFemales = (from x in Population
+                                    where x.Gender == Gender.Female && x.IsAlive == true
+                                    select x).Count();
+            }
+
+            DisplayResult(Males, Females);
         }
     }
 }
