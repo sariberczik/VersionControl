@@ -15,6 +15,10 @@ namespace _9.heti
         public Form1()
         {
             InitializeComponent();
+
+            List<person> Population = new List<person>();
+            List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
+            List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
         }
     }
 }
