@@ -19,6 +19,7 @@ namespace _9.heti
             List<person> Population = new List<person>();
             List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
             List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+
         }
     }
 }
