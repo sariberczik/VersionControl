@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -58,5 +59,27 @@ namespace _9.heti
 
             DisplayResult(Males, Females);
         }
+
+        public List<person> GetPopulation(string csvpath)
+        {
+            List<person> population = new List<person>();
+
+            using (StreamReader sr = new StreamReader(csvpath, Encoding.Default))
+            {
+                while (!sr.EndOfStream)
+                {
+                    var line = sr.ReadLine().Split(';');
+                    person p = new person();
+                    p.BirthYear = int.Parse(line[0]);
+                    p.Gender = (Gender)int.Parse(line[1]);
+                    p.NbrOfChildren = int.Parse(line[2]);
+                    population.Add(p);
+                }
+            }
+
+            return population;
+        }
+
+
     }
 }
