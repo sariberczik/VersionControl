@@ -12,18 +12,20 @@ namespace _9.heti
 {
     public partial class Form1 : Form
     {
+        List<person> Population = new List<person>();
+        List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
+        List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
+
+        List<int> Males = new List<int>();
+        List<int> Females = new List<int>();
+
+        Random rng = new Random(1234);
+
         public Form1()
         {
             InitializeComponent();
 
-            List<person> Population = new List<person>();
-            List<BirthProbability> BirthProbabilities = new List<BirthProbability>();
-            List<DeathProbability> DeathProbabilities = new List<DeathProbability>();
-
-            List<int> Males = new List<int>();
-            List<int> Females = new List<int>();
-
-            Random rng = new Random(1234);
+            
 
         }
     }
