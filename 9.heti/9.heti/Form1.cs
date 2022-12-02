@@ -147,6 +147,21 @@ namespace _9.heti
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Population = GetPopulation(textBox1.Text);
+            BirthProbabilities = GetBirthProbability(@"C:\Windows\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbability(@"C:\Windows\Temp\halál.csv");
+
+            Males.DefaultIfEmpty();
+            Females.DefaultIfEmpty();
+            richTextBox1.Text = "";
+
+            Simulation();
+        }
+
+
+
 
 
 
