@@ -22,6 +22,9 @@ namespace _9.heti
 
             List<int> Males = new List<int>();
             List<int> Females = new List<int>();
+
+            Random rng = new Random(1234);
+
         }
     }
 }
