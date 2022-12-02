@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _9.heti.Entities
 {
-    class enum Gender
+    public enum Gender
     {
     }
 }
