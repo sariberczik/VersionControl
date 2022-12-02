@@ -119,6 +119,33 @@ namespace _9.heti
             return deathprobability;
         }
 
+        void SimStep(int year, person person)
+        {
+            if (!person.IsAlive) return;
+
+            int age = year - person.BirthYear;
+
+            double pD = (from x in DeathProbabilities
+                         where x.Age == age && x.Gender == person.Gender
+                         select x.P).FirstOrDefault();
+
+            if (rng.NextDouble() <= pD) person.IsAlive = false;
+
+            if (person.IsAlive == false || person.Gender == Gender.Male) return;
+
+            double pB = (from x in BirthProbabilities
+                         where x.Age == age && x.NbrOfChildren == person.NbrOfChildren
+                         select x.P).FirstOrDefault();
+
+            if (rng.NextDouble() <= pB)
+            {
+                person newBorn = new person();
+                newBorn.Gender = (Gender)rng.Next(1, 3);
+                newBorn.BirthYear = year;
+                newBorn.NbrOfChildren = 0;
+                Population.Add(newBorn);
+            }
+        }
 
 
 
